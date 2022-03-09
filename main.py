@@ -39,7 +39,7 @@ async def create_upload_file(file: UploadFile = File(...)):
     return {"name": file.filename, 'yes': file.filename in imgs}
 
 
-@api.post('/yes')
+@api.get('/yes')
 async def is_yes(file: str):
     imgs = os.listdir('file/yes')
     return {'yes': file in imgs}
